@@ -1,0 +1,19 @@
+# 数据集图像与原始压缩包：体积过大，仓库不含，获取方式见 README「数据」一节
+data/BUSI/
+data/TN3K/
+data/downloads/
+
+# 模型权重：单文件约 120MB，超出 GitHub 限制
+outputs/checkpoints/
+
+# 原始运行日志：体积大，指标日志见 outputs/logs/*.csv
+outputs/logs/*.log
+
+# Python
+__pycache__/
+*.py[cod]
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
