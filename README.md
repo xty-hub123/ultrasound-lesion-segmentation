@@ -70,6 +70,25 @@ Dice、IoU、敏感度 SE、特异度 SP、像素准确率 ACC、HD95（95% Haus
 └── run_all.sh           # 一键跑完 4 组实验
 ```
 
+## 模型权重下载
+
+4 组实验的最优权重（`*_best.pth`，原始 fp32，约 120MB/个）超出 GitHub 单文件
+100MB 限制，未直接包含在仓库中，托管在本仓库的 Releases（标签 `v1.0-checkpoints`）：
+
+| 模型 | 数据集 | 最佳 epoch | 验证集 Dice | 权重下载 |
+|---|---|---|---|---|
+| U-Net | BUSI | 66 | 0.7353 | [unet_busi_best.pth](https://github.com/xty-hub123/ultrasound-lesion-segmentation/releases/download/v1.0-checkpoints/unet_busi_best.pth) |
+| Attention U-Net | BUSI | 93 | 0.7375 | [attunet_busi_best.pth](https://github.com/xty-hub123/ultrasound-lesion-segmentation/releases/download/v1.0-checkpoints/attunet_busi_best.pth) |
+| U-Net | TN3K | 104 | 0.7903 | [unet_tn3k_best.pth](https://github.com/xty-hub123/ultrasound-lesion-segmentation/releases/download/v1.0-checkpoints/unet_tn3k_best.pth) |
+| Attention U-Net | TN3K | 105 | 0.7887 | [attunet_tn3k_best.pth](https://github.com/xty-hub123/ultrasound-lesion-segmentation/releases/download/v1.0-checkpoints/attunet_tn3k_best.pth) |
+
+SHA256 校验和见 [SHA256SUMS.txt](https://github.com/xty-hub123/ultrasound-lesion-segmentation/releases/download/v1.0-checkpoints/SHA256SUMS.txt)（校验：`sha256sum -c SHA256SUMS.txt`）。
+下载后放入 `outputs/checkpoints/` 即可直接评估：
+
+```bash
+python3 src/evaluate.py --checkpoint outputs/checkpoints/attunet_busi_best.pth --split test
+```
+
 ## 运行步骤
 
 ```bash

@@ -3,7 +3,7 @@ data/BUSI/
 data/TN3K/
 data/downloads/
 
-# 模型权重：单文件约 120MB，超出 GitHub 限制
+# 模型权重：单文件约 120MB，超出 GitHub 限制；改由 GitHub Releases 提供（见 README「模型权重下载」）
 outputs/checkpoints/
 
 # 原始运行日志：体积大，指标日志见 outputs/logs/*.csv
